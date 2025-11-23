@@ -1,5 +1,5 @@
 image "letter.svg" @{
-  url: "https://i1.wp.com/hechingerreport.org/wp-content/uploads/2018/04/Jennifer-Heller-Buckley-PHOTO1.jpg?ssl=1",
+  url: "https://wordle-svg-ht47.vercel.app/v/2.svg",
   width: 10,
   height: 10,
   center: (0, 0),

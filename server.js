@@ -14,6 +14,7 @@ app.get("/:letter/:position.svg", (req, res) => {
       color="#b59f3b"
     }
     res.set("Access-Control-Allow-Origin","*")
+    res.set("Cross-Origin-Resource-Policy", "cross-origin")
     res.send(`<svg width="64" height="68" viewBox="0 0 64 68" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect y="2" width="64" height="64" fill="${color}"/>
 <text x="32" y="50" text-anchor="middle" font-family="Arial" font-size="48" font-weight="bold" fill="white">${req.params.letter.toUpperCase()}</text>
