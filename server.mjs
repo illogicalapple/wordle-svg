@@ -21,6 +21,7 @@ router.get("/:letter/:position.svg", (req, res) => {
 <rect y="2" width="64" height="64" fill="${color}"/>
 <text x="32" y="50" text-anchor="middle" font-family="Arial" font-size="48" font-weight="bold" fill="white">${req.params.letter.toUpperCase()}</text>
 </svg>`)
+}
 })
 
 
