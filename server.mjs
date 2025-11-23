@@ -1,11 +1,13 @@
 // lol if anyone is looking at this the code is beautiful idk what you're talking about'
 
-const express = require("express")
-const axios = require("axios")
+import express, { Router } from "express";
+import serverless from "serverless-http";
+import axios from "axios"
 const app = express()
-const port = 1234
+const router = Router()
+const port = 3000
 
-app.get("/:letter/:position.svg", (req, res) => {
+router.get("/:letter/:position.svg", (req, res) => {
   var date = new Date(Date.now())
   var url = `https://www.nytimes.com/svc/wordle/v2/${date.toISOString().split('T')[0]}.json`
   axios.get(url).then(response => response.data).then(data => {
@@ -22,4 +24,7 @@ app.get("/:letter/:position.svg", (req, res) => {
 }
 })
 
-app.listen(port, ()=>{})
+
+app.use("/api/", router);
+
+export const handler = serverless(app);
