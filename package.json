@@ -16,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/illogicalapple/wordle-svg/issues"
   },
-  "homepage": "https://github.com/illogicalapple/wordle-svg#readme"
+  "homepage": "https://github.com/illogicalapple/wordle-svg#readme",
+  "type":"module"
 }
