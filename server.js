@@ -1,8 +1,8 @@
 const express = require("express")
 const axios = require("axios")
+const { convert } = import('convert-svg-to-png');
 const app = express()
 const port = 3000
-const { convert } = require('convert-svg-to-png');
 
 async function convertSvgToPng(svgString) {
   try {
