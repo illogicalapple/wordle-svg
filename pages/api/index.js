@@ -14,8 +14,8 @@ app.get("/:letter/:position.png", (req, res) => {
     } else if(data.solution.includes(req.params.letter)) {
       color="#b59f3b"
     }
-    sharp(Buffer.from(`<svg width="64" height="68" viewBox="0 0 64 68" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect y="2" width="64" height="64" fill="${color}"/>
+    sharp(Buffer.from(`<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="0" width="64" height="64" fill="${color}"/>
 </svg>`)).png().toBuffer().then(d=>{
     res.set("Access-Control-Allow-Origin","*")
     res.set("Cross-Origin-Resource-Policy", "cross-origin")
