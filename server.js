@@ -16,7 +16,6 @@ app.get("/:letter/:position.png", (req, res) => {
     }
     sharp(Buffer.from(`<svg width="64" height="68" viewBox="0 0 64 68" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect y="2" width="64" height="64" fill="${color}"/>
-<text x="32" y="50" text-anchor="middle" font-family="Roboto" font-size="48" font-weight="bold" fill="white">${req.params.letter.toUpperCase()}</text>
 </svg>`)).png().toBuffer().then(d=>{
     res.set("Access-Control-Allow-Origin","*")
     res.set("Cross-Origin-Resource-Policy", "cross-origin")
