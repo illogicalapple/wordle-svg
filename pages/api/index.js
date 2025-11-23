@@ -14,9 +14,11 @@ app.get("/:letter/:position.png", (req, res) => {
     } else if(data.solution.includes(req.params.letter)) {
       color="#b59f3b"
     }
-    sharp(Buffer.from(`<svg width="64" height="68" viewBox="0 0 64 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+    sharp(Buffer.from(`<svg width="64" height="68" viewBox="0 0 64 68" fill="none" xmlns="http://www.w3.org/2000/svg"><style>
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+</style>
 <rect y="2" width="64" height="64" fill="${color}"/>
-<text x="32" y="50" text-anchor="middle" font-family="Arial" font-size="48" font-weight="bold" fill="white">${req.params.letter.toUpperCase()}</text>
+<text x="32" y="50" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="48" font-weight="bold" fill="white">${req.params.letter.toUpperCase()}</text>
 </svg>`)).png().toBuffer().then(d=>{
     res.set("Access-Control-Allow-Origin","*")
     res.set("Cross-Origin-Resource-Policy", "cross-origin")
